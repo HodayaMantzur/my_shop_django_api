@@ -89,11 +89,20 @@ WSGI_APPLICATION = 'myshop.wsgi.application'
 
 # Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv('DB_URL'),
-        conn_max_age=600
-    )
+    #'default': dj_database_url.config(
+        # default=os.getenv('DB_URL'),
+        # conn_max_age=600
+        # DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DATABASE_NAME'),
+        'USER': os.getenv('DATABASE_USER'),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
+        'HOST': os.getenv('DATABASE_HOST'),
+        'PORT': os.getenv('DATABASE_PORT'),
+    }
 }
+
 
 # DATABASES = {
 #     'default': {
