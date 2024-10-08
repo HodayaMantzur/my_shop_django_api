@@ -10,6 +10,7 @@
     - python manage.py migrate
     - python manage.py createsuperuser
 
-4. run the server
+3. run the server
     - python manage.py runserver
 
+4. add some products in admin or shell and navigate to 'http://127.0.0.1:8000/products/'
