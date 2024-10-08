@@ -95,12 +95,13 @@ DATABASES = {
         # conn_max_age=600
         # DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DATABASE_NAME'),
-        'USER': config('DATABASE_USER'),
-        'PASSWORD': config('DATABASE_PASSWORD'),
-        'HOST': config('DATABASE_HOST'),  
-        'PORT': config('DATABASE_PORT'), 
+        'ENGINE': 'django.db.backends.postgresql',  # ודא שזה כאן
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),  # ברירת מחדל
+        'PORT': os.getenv('DB_PORT'),       # ברירת מחדל
+
     }
 }
 
